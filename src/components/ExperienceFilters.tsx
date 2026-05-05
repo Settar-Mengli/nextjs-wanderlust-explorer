@@ -84,14 +84,14 @@ export default function ExperienceFilters({
   return (
     <section
       aria-label="Experience filters"
-      className="mt-10 rounded-lg bg-white p-4 shadow-[0_18px_45px_rgba(15,23,42,0.08)] sm:p-5"
+      className="mt-8 border border-stone-300 bg-[#fffdf8] p-4 shadow-[0_16px_40px_rgba(21,21,21,0.06)] sm:p-5"
     >
       <form
         onSubmit={handleSubmit}
-        className="grid gap-4 lg:grid-cols-[1fr_220px_220px_auto]"
+        className="grid gap-3 sm:gap-4 lg:grid-cols-[1fr_220px_220px_auto]"
       >
         <label className="block">
-          <span className="mb-2 block text-xs font-semibold uppercase text-slate-400">
+          <span className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-stone-400">
             Search title
           </span>
           <input
@@ -100,12 +100,12 @@ export default function ExperienceFilters({
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Try Kyoto, glacier, tapas..."
-            className="h-12 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm font-medium text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-600/10"
+            className="h-11 w-full border border-stone-300 bg-[#f7f3eb] px-4 text-sm font-semibold text-[#151515] outline-none transition placeholder:text-stone-400 focus:border-[#777536] focus:bg-white focus:ring-4 focus:ring-[#777536]/15 sm:h-12"
           />
         </label>
 
         <label className="block">
-          <span className="mb-2 block text-xs font-semibold uppercase text-slate-400">
+          <span className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-stone-400">
             Category
           </span>
           <select
@@ -113,7 +113,7 @@ export default function ExperienceFilters({
             onChange={(event) =>
               updateQuery({ category: event.target.value, q: search })
             }
-            className="h-12 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm font-semibold text-slate-950 outline-none transition focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-600/10"
+            className="h-11 w-full border border-stone-300 bg-[#f7f3eb] px-4 text-sm font-semibold text-[#151515] outline-none transition focus:border-[#777536] focus:bg-white focus:ring-4 focus:ring-[#777536]/15 sm:h-12"
           >
             <option value="">All categories</option>
             {categories.map((category) => (
@@ -125,7 +125,7 @@ export default function ExperienceFilters({
         </label>
 
         <label className="block">
-          <span className="mb-2 block text-xs font-semibold uppercase text-slate-400">
+          <span className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-stone-400">
             Destination
           </span>
           <select
@@ -133,7 +133,7 @@ export default function ExperienceFilters({
             onChange={(event) =>
               updateQuery({ destination: event.target.value, q: search })
             }
-            className="h-12 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm font-semibold text-slate-950 outline-none transition focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-600/10"
+            className="h-11 w-full border border-stone-300 bg-[#f7f3eb] px-4 text-sm font-semibold text-[#151515] outline-none transition focus:border-[#777536] focus:bg-white focus:ring-4 focus:ring-[#777536]/15 sm:h-12"
           >
             <option value="">All destinations</option>
             {destinations.map((destination) => (
@@ -147,7 +147,7 @@ export default function ExperienceFilters({
         <div className="flex items-end gap-3">
           <button
             type="submit"
-            className="h-12 flex-1 rounded-full bg-slate-950 px-5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 lg:flex-none"
+            className="h-11 flex-1 border border-[#151515] bg-[#151515] px-5 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#151515] sm:h-12 lg:flex-none"
           >
             Search
           </button>
@@ -155,14 +155,14 @@ export default function ExperienceFilters({
             type="button"
             onClick={clearFilters}
             disabled={!hasActiveFilters}
-            className="h-12 rounded-full border border-slate-200 px-5 text-sm font-bold text-slate-600 transition hover:-translate-y-0.5 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0"
+            className="h-11 border border-stone-300 px-5 text-sm font-black text-stone-600 transition hover:-translate-y-0.5 hover:bg-[#f7f3eb] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 sm:h-12"
           >
             Clear
           </button>
         </div>
       </form>
 
-      <p className="mt-4 text-sm font-medium text-slate-500">
+      <p className="mt-4 text-sm font-semibold text-stone-500">
         {isPending
           ? "Updating results..."
           : `Showing ${resultCount} of ${totalCount} experiences`}

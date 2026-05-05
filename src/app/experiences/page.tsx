@@ -72,30 +72,30 @@ export default async function ExperiencesPage({
   });
 
   return (
-    <main className="bg-[#f6f3ee] px-4 py-10 text-slate-950 sm:px-6 sm:py-12 lg:px-8">
+    <main className="bg-[#f7f3eb] px-4 py-10 text-[#151515] sm:px-6 sm:py-14 lg:px-8">
       <section className="mx-auto w-full max-w-7xl">
-        <header className="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-end">
+        <header className="grid gap-7 border-b border-stone-300 pb-8 lg:grid-cols-[1fr_360px] lg:items-end">
           <div>
-            <p className="text-sm font-semibold uppercase text-teal-700">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#777536]">
               Full travel catalog
             </p>
-            <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight sm:text-6xl">
+            <h1 className="mt-3 max-w-4xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
               Explore every curated escape.
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-stone-600 sm:text-lg sm:leading-8">
               Search by title, narrow by travel style, or jump straight to a
               destination. The filters stay in the URL so the catalog is easy to
               share or revisit.
             </p>
           </div>
 
-          <dl className="grid grid-cols-1 gap-3 rounded-lg bg-white p-3 shadow-[0_18px_45px_rgba(15,23,42,0.08)] sm:grid-cols-3 lg:grid-cols-3">
+          <dl className="grid grid-cols-1 gap-px overflow-hidden border border-stone-300 bg-stone-300 shadow-[0_18px_45px_rgba(21,21,21,0.06)] sm:grid-cols-3 lg:grid-cols-3">
             {stats.map((stat) => (
-              <div key={stat.label} className="rounded-lg bg-slate-50 p-4">
-                <dt className="text-xs font-semibold uppercase text-slate-400">
+              <div key={stat.label} className="bg-[#fffdf8] p-4">
+                <dt className="text-xs font-bold uppercase tracking-[0.14em] text-stone-400">
                   {stat.label}
                 </dt>
-                <dd className="mt-2 text-2xl font-black text-slate-950">
+                <dd className="mt-2 text-2xl font-black text-[#151515]">
                   {stat.value}
                 </dd>
               </div>
@@ -117,7 +117,7 @@ export default async function ExperiencesPage({
         {filteredExperiences.length > 0 ? (
           <section
             aria-label="Filtered travel experiences"
-            className="mt-10 grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3"
+            className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
           >
             {filteredExperiences.map((experience) => (
               <ExperienceCard key={experience.id} experience={experience} />
@@ -126,22 +126,22 @@ export default async function ExperiencesPage({
         ) : (
           <section
             aria-live="polite"
-            className="mt-10 rounded-lg bg-white p-8 text-center shadow-[0_18px_45px_rgba(15,23,42,0.08)] sm:p-12"
+            className="mt-10 border border-stone-300 bg-[#fffdf8] p-8 text-center shadow-[0_18px_45px_rgba(21,21,21,0.07)] sm:p-12"
           >
-            <p className="text-sm font-semibold uppercase text-teal-700">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#777536]">
               No matches
             </p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950">
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-[#151515]">
               No experiences match those filters.
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-stone-600">
               Try a broader title search, choose a different destination, or
               reset the filters to return to the full Wanderlust Explorer
               catalog.
             </p>
             <Link
               href="/experiences"
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-800"
+              className="mt-8 inline-flex items-center justify-center border border-[#151515] bg-[#151515] px-6 py-3 text-sm font-black text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-white hover:text-[#151515]"
             >
               Reset filters
             </Link>

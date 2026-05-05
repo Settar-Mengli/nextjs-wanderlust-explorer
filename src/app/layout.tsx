@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { FavoritesProvider } from "@/components/FavoritesProvider";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 
@@ -49,10 +50,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-[#f6f3ee]">
+      <body className="flex min-h-full flex-col bg-[#f7f3eb]">
         <FavoritesProvider>
           <Navbar />
           {children}
+          <Footer />
         </FavoritesProvider>
       </body>
     </html>

@@ -22,32 +22,30 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/70 bg-[#f6f3ee]/92 shadow-sm shadow-slate-950/5 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-stone-300/70 bg-[#f7f3eb]/95 backdrop-blur-xl">
       <nav
         aria-label="Primary navigation"
-        className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-3 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8"
+        className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-3 py-2.5 sm:px-6 md:flex-row md:items-center md:justify-between md:gap-4 lg:px-8"
       >
         <Link
           href="/"
           aria-label="Wanderlust Explorer home"
-          className="group inline-flex w-fit items-center gap-3"
+          className="group inline-flex max-w-full min-w-0 items-center gap-2 sm:gap-3"
         >
-          <span className="relative grid size-11 shrink-0 place-items-center overflow-hidden rounded-lg bg-slate-950 text-sm font-black text-white shadow-lg shadow-slate-950/15 transition group-hover:-translate-y-0.5">
-            <span className="absolute inset-x-2 top-2 h-px bg-white/35" />
-            <span className="tracking-tight">WE</span>
-            <span className="absolute bottom-2 h-1 w-6 rounded-full bg-amber-300" />
+          <span className="grid size-9 shrink-0 place-items-center border border-[#151515] bg-[#151515] text-xs font-black text-white transition group-hover:bg-[#b69b5e] group-hover:text-[#151515] sm:size-10 sm:text-sm md:size-11">
+            WE
           </span>
           <span className="min-w-0">
-            <span className="block whitespace-nowrap text-base font-black tracking-tight text-slate-950 sm:text-lg">
+            <span className="block truncate text-sm font-black tracking-tight text-[#151515] sm:text-base md:text-lg">
               Wanderlust Explorer
             </span>
-            <span className="block text-xs font-semibold uppercase text-slate-500">
-              Premium travel guide
+            <span className="block truncate text-[0.6rem] font-semibold uppercase tracking-[0.1em] text-stone-500 sm:text-[0.66rem] sm:tracking-[0.18em]">
+              Field journal
             </span>
           </span>
         </Link>
 
-        <div className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1 md:mx-0 md:flex-nowrap md:overflow-visible md:pb-0">
+        <div className="grid w-full min-w-0 grid-cols-4 gap-1.5 md:w-auto md:flex md:flex-nowrap md:gap-1">
           {navItems.map((item) => {
             const isActive = isActivePath(pathname, item.href);
 
@@ -56,10 +54,10 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`flex min-h-11 shrink-0 items-center rounded-full px-4 py-2 text-sm font-semibold whitespace-nowrap transition ${
+                className={`flex min-h-10 min-w-0 items-center justify-center border px-1.5 py-2 text-[0.625rem] font-bold uppercase tracking-[0.02em] whitespace-nowrap transition sm:px-3 sm:text-xs sm:tracking-[0.08em] md:shrink-0 md:px-4 md:text-[0.8rem] md:tracking-[0.12em] ${
                   isActive
-                    ? "bg-slate-950 text-white shadow-sm shadow-slate-950/15"
-                    : "text-slate-600 hover:bg-white hover:text-slate-950 hover:shadow-sm"
+                    ? "border-[#151515] bg-[#151515] text-white shadow-sm shadow-slate-950/10"
+                    : "border-transparent text-stone-600 hover:border-stone-300 hover:bg-white hover:text-[#151515]"
                 }`}
               >
                 {item.label}
